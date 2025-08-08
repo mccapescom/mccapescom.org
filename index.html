@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Clean Site</title>
+  <style>
+    /* Reset & base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: black;
+      background: url('./bg.png') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Centered nav bar */
+    nav {
+      width: 100%;
+      padding: 20px 0;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px); /* optional: clean glass effect */
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+      margin: 0 15px;
+      font-size: 18px;
+      transition: opacity 0.2s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    /* Main content */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="hero">
+    <h1>Welcome to the <br> <strong>Minecraft Capes Community</strong></h1>
+    <p><strong>The</strong> place to discuss anything about capes</p>
+  </div>
+
+</body>
+</html>
