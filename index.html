@@ -44,15 +44,17 @@
       opacity: 0.7;
     }
     .hero {
-      scroll-snap-align: start;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
+        position: relative;
+        scroll-snap-align: start;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
     }
+
 
     .hero-end-snap {
       height: 100vh;
@@ -205,27 +207,30 @@ html, body {
 }
 
 .mouse {
-    margin-top: 12%;
-	width: 25px;
-	height: 45px;
-	border: 3px solid #333;
-	border-radius: 60px;
-	position: relative;
-	&::before {
-		content: '';
-		width: 12px;
-		height: 12px;
-		position: absolute;
-		top: 10px;
-		left: 50%;
-		transform: translateX(-50%);
-		background-color: #333;
-		border-radius: 50%;
-		opacity: 1;
-		animation: wheel 2s infinite;
-		-webkit-animation: wheel 2s infinite;
-	}
+    position: absolute;
+    bottom: 40px; /* distance from bottom of the hero section */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 45px;
+    border: 3px solid #333;
+    border-radius: 60px;
 }
+
+.mouse::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    border-radius: 50%;
+    opacity: 1;
+    animation: wheel 2s infinite;
+}
+
 
 @keyframes wheel {
 	to {
