@@ -27,26 +27,35 @@
     padding-top: 80px;
     color: #222;
   }
-  nav {
-    width: 100%;
-    padding: 20px 0;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  nav a {
-    text-decoration: none;
-    color: #333;
-    margin: 0 15px;
-    font-size: 18px;
-    font-weight: 500;
-    transition: color 0.2s ease;
-  }
-  nav a:hover { color: #4CAF50; }
+nav {
+  width: 100%;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* pushes logo left and links right */
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+nav a:hover { color: #4CAF50; }
+
 
   .store-container {
     max-width: 1400px;
@@ -128,14 +137,25 @@
       transform: translateY(0);
     }
   }
+
+  .logo {
+    border-radius: 70%;
+    width: 5%;
+    height: 5%;
+  }
 </style>
 </head>
 <body>
 <nav>
+  <img class="logo" src="logo.png" alt="Logo">
+  <div class="nav-links">
     <a href="./">Home</a>
     <a href="./store">Store</a>
     <a href="./contact">Contact</a>
+  </div>
+  <div></div> 
 </nav>
+
 
 <div class="store-container">
   <h1 class="section-title">Official Sells</h1>
