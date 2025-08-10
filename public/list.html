@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Community Listings - Minecraft Capes</title>
+<style>
+  body { font-family: 'Segoe UI', sans-serif; background: #f2f2f2; padding: 20px; }
+  #auth-container, #listings { max-width: 600px; margin: auto; }
+  input, button { padding: 10px; margin: 5px 0; width: 100%; font-size: 16px; }
+  .cape-card { background: white; padding: 15px; border-radius: 6px; margin-bottom: 10px; box-shadow: 0 0 6px rgba(0,0,0,0.1); }
+  .cape-card h3 { margin: 0 0 6px; }
+  #toggle-auth {
+    background: none;
+    border: none;
+    color: #4CAF50;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+
+<div id="auth-container">
+  <h2 id="form-title">Login to see your listings</h2>
+  
+  <input type="text" id="username" placeholder="Username" required />
+  <input type="password" id="password" placeholder="Password" required />
+  
+  <div id="register-extra" style="display:none;">
+    <input type="password" id="password-confirm" placeholder="Confirm Password" />
+  </div>
+  
+  <button id="auth-btn">Login</button>
+  <p id="auth-error" style="color: red;"></p>
+  
+  <p>
+    <button id="toggle-auth">Don't have an account? Register here</button>
+  </p>
+</div>
+
+<div id="listings" style="display:none;">
+  <button id="show-create-btn">Create New Listing</button>
+
+<div id="create-listing-form" style="display:none; margin-top: 15px; background:#fff; padding: 15px; border-radius: 6px; box-shadow: 0 0 6px rgba(0,0,0,0.1);">
+  <h3>New Cape Listing</h3>
+  <input type="text" id="new-name" placeholder="Cape Name" required />
+  <input type="text" id="new-description" placeholder="Description" required />
+  <select id="new-type" required>
+    <option value="">Select Type</option>
+    <option value="sell">Sell</option>
+    <option value="trade">Trade</option>
+  </select>
+  <button id="create-listing-btn">Create Listing</button>
+  <button id="cancel-create-btn" style="margin-left: 10px;">Cancel</button>
+  <p id="create-error" style="color: red;"></p>
+</div>
+
+  <h2>Your Community Listings</h2>
+  <div id="cape-list"></div>
+  <button id="logout-btn">Logout</button>
+</div>
+
+<script src="list.js">
+</script>
+
+</body>
+</html>

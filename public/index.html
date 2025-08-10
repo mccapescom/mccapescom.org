@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Minecraft Capes Community</title>
+    <link rel="icon" type="image/png" href="./logo.png">
+
+    <!-- Open Graph tags for embed preview -->
+  <meta property="og:title" content="Minecraft Capes Community" />
+  <meta property="og:description" content="Independent community for sharing and discussing Minecraft capes! Not affiliated with Mojang or Microsoft." />
+  <meta property="og:image" content="https://golden.is-a.dev/minecraftcapes/logo.png" />
+  <meta property="og:url" content="https://golden.is-a.dev/minecraftcapes/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Optional: Twitter card tags (some platforms also use these) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Minecraft Capes Community" />
+  <meta name="twitter:description" content="Independent community for sharing and discussing Minecraft capes! Not affiliated with Mojang or Microsoft." />
+  <meta name="twitter:image" content="https://golden.is-a.dev/minecraftcapes/logo.png" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .scroll-snap {
+      height: 100vh; /* viewport height */
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+    }
+
+    /* Snap items */
+    .scroll-snap > div {
+      height: 100vh;
+      scroll-snap-align: start;
+    }
+    
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: black;
+      background: url('./bg.png') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      scroll-behavior: smooth;
+    }
+nav {
+  width: 100%;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* pushes logo left and links right */
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+nav a:hover { color: #4CAF50; }
+
+    .hero {
+        position: relative;
+        scroll-snap-align: start;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+
+    .hero-end-snap {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      scroll-snap-align: end;
+    }
+
+    .hero-no-snap {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    .hero h1, .hero-end-snap h1, .hero-no-snap h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    .hero p, .hero-end-snap p, .hero-no-snap p {
+      font-size: 20px;
+      opacity: 0.8;
+    }
+
+    footer {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(8px);
+        padding: 15px 10px; /* reduced padding */
+        text-align: center;
+    }
+
+.footer-content {
+  max-width: 600px; /* slightly narrower */
+  margin: 0 auto;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px; /* less gap */
+  margin-bottom: 8px;
+}
+
+.social-grid a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px; /* less space between icon & text */
+  padding: 6px 8px; /* slimmer buttons */
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  color: black;
+  text-decoration: none;
+  font-size: 14px; /* smaller text */
+  font-weight: 500;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-grid a:hover {
+  transform: translateY(-1px);
+  opacity: 0.85;
+}
+
+.social-grid img {
+  width: 16px; /* smaller icon */
+  height: 16px;
+}
+
+.copyright {
+  font-size: 11px; /* smaller */
+  color: black;
+  opacity: 0.6;
+  margin-top: 5px; /* less spacing */
+}
+
+.partners-marquee {
+  width: 49%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  padding: 8px 0;
+}
+
+.marquee-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+}
+
+.marquee-content span {
+  display: inline-block;
+  margin: 0 30px;
+  font-weight: bold;
+  font-size: 18px;
+  color: black;
+}
+
+.marquee-content a{
+    color: black;
+    text-decoration: underline;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	background-color: #c9d6df;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.field {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 300px;
+}
+
+.mouse {
+    position: absolute;
+    bottom: 100px; /* distance from bottom of the hero section */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 45px;
+    border: 3px solid #333;
+    border-radius: 60px;
+}
+
+.mouse::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    border-radius: 50%;
+    opacity: 1;
+    animation: wheel 2s infinite;
+}
+
+
+@keyframes wheel {
+	to {
+		opacity: 0;
+		top: 30px;
+	}
+}
+
+@-webkit-keyframes wheel {
+	to {
+		opacity: 0;
+		top: 30px;
+	}
+}
+
+  .logo {
+    border-radius: 70%;
+    width: 5%;
+    height: 5%;
+  }
+
+    
+  </style>
+</head>
+<body>
+<nav>
+  <img class="logo" src="logo.png" alt="Logo">
+  <div class="nav-links">
+    <a href="./">Home</a>
+    <a href="./store">Store</a>
+    <a href="./contact">Contact</a>
+  </div>
+  <div></div> 
+</nav>
+
+  <div class="scroll-snap">
+    <div class="hero">
+        <h1>Welcome to the <br> <strong>Minecraft Capes Community</strong></h1>
+        <p><strong>The</strong> place to discuss anything about capes</p>
+        <div class="mouse"></div>
+    </div>
+
+    <div class="hero">
+        <h1>Join the <br> <strong>Community Today</strong></h1>
+        <p>Share your favorite capes and more <a target="_blank" href="https://discord.gg/BUZ4c4NSFy">here</a></p>
+    </div>
+
+    <div class="hero">
+        <h1>Contact Us <br> <strong>Get in Touch</strong></h1>
+        <p>Questions? 
+            <a href="#footer">
+                Reach out anytime!
+            </a>
+        </p>
+    </div>
+
+    <div class="hero-end-snap">
+        <h1>Our Partners</h1>
+
+        <div class="partners-marquee">
+            <div class="marquee-content">
+                <span> <a target="_blank" href="https://www.youtube.com/@AxolotlGuy7">AxolotlGuy7</a> <br> 1,22k subscribers</span>
+                <span> <a target="_blank" href="https://www.youtube.com/@goldenboys2011GR">golden</a> <br> 100 subscribers</span>
+                <span>Partner 3</span>
+                <span>Partner 4</span>
+                <span>Partner 5</span>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+    <div class="hero-no-snap">
+        <h1>text</h1>
+    </div>
+  
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="social-grid">
+            <a target="_blank" href="https://discord.gg/BUZ4c4NSFy">
+                <img src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord"> Discord
+            </a>
+            <a target="_blank" href="#">
+                <img src="https://cdn.simpleicons.org/x/1DA1F2" alt="Twitter"> Twitter
+            </a>
+            <a target="_blank" href="#">
+                <img src="https://cdn.simpleicons.org/reddit/FF4500" alt="Reddit"> Reddit
+            </a>
+            <a target="_blank" href="#">
+                <img src="https://cdn.simpleicons.org/github/000000" alt="GitHub"> GitHub
+            </a>
+            </div>
+            <p class="copyright">&copy; 2025 Minecraft Capes Community</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - Minecraft Capes Community</title>
+  <link rel="icon" type="image/png" href="./logo.png">
+
+  <!-- Open Graph for previews -->
+  <meta property="og:title" content="Contact - Minecraft Capes Community" />
+  <meta property="og:description" content="Reach out to the Minecraft Capes Community team." />
+  <meta property="og:image" content="https://golden.is-a.dev/minecraftcapes/logo.png" />
+  <meta property="og:url" content="https://golden.is-a.dev/minecraftcapes/contact.html" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    /* Reset and base styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: black;
+      background: url('./bg.png') no-repeat center center fixed;
+      background-size: cover;
+    }
+nav {
+  width: 100%;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* pushes logo left and links right */
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+nav a:hover { color: #4CAF50; }
+
+  .logo {
+    border-radius: 70%;
+    width: 5%;
+    height: 5%;
+  }
+
+    main {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 100px 20px 40px; /* leave space for fixed navbar */
+    }
+
+    main h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+    main p {
+      font-size: 18px;
+      opacity: 0.85;
+      margin-bottom: 30px;
+    }
+
+    .contact-box {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(6px);
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    textarea { resize: vertical; min-height: 100px; }
+
+    button {
+      padding: 12px;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+    button:hover { opacity: 0.8; }
+
+    footer {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      padding: 15px 10px;
+      text-align: center;
+    }
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .social-grid a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px 8px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 6px;
+      color: black;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .social-grid a:hover {
+      transform: translateY(-1px);
+      opacity: 0.85;
+    }
+    .social-grid img { width: 16px; height: 16px; }
+    .copyright {
+      font-size: 11px;
+      color: black;
+      opacity: 0.6;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <img class="logo" src="logo.png" alt="Logo">
+  <div class="nav-links">
+    <a href="./">Home</a>
+    <a href="./store">Store</a>
+    <a href="./contact">Contact</a>
+  </div>
+  <div></div> 
+</nav>
+
+  <main>
+    <h1>Contact Us</h1>
+    <p>Have questions, suggestions, or feedback? We'd love to hear from you!</p>
+
+    <div class="contact-box">
+      <form action="mailto:your-email@example.com" method="POST" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="social-grid">
+        <a target="_blank" href="https://discord.gg/BUZ4c4NSFy">
+          <img src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord"> Discord
+        </a>
+        <a target="_blank" href="#">
+          <img src="https://cdn.simpleicons.org/x/1DA1F2" alt="Twitter"> Twitter
+        </a>
+        <a target="_blank" href="#">
+          <img src="https://cdn.simpleicons.org/reddit/FF4500" alt="Reddit"> Reddit
+        </a>
+        <a target="_blank" href="#">
+          <img src="https://cdn.simpleicons.org/github/000000" alt="GitHub"> GitHub
+        </a>
+      </div>
+      <p class="copyright">&copy; 2025 Minecraft Capes Community</p>
+    </div>
+  </footer>
+</body>
+</html>

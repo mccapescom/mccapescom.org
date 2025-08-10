@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minecraft Capes Store</title>
+<link rel="icon" type="image/png" href="./logo.png">
+
+    <!-- Open Graph tags for embed preview -->
+  <meta property="og:title" content="Minecraft Capes Community" />
+  <meta property="og:description" content="Independent community for sharing and discussing Minecraft capes! Not affiliated with Mojang or Microsoft." />
+  <meta property="og:image" content="https://golden.is-a.dev/minecraftcapes/logo.png" />
+  <meta property="og:url" content="https://golden.is-a.dev/minecraftcapes/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Optional: Twitter card tags (some platforms also use these) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Minecraft Capes Community" />
+  <meta name="twitter:description" content="Independent community for sharing and discussing Minecraft capes! Not affiliated with Mojang or Microsoft." />
+  <meta name="twitter:image" content="https://golden.is-a.dev/minecraftcapes/logo.png" />
+
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f2f2f2; /* light background */
+    margin: 0;
+    padding-top: 80px;
+    color: #222;
+  }
+nav {
+  width: 100%;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* pushes logo left and links right */
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+nav a:hover { color: #4CAF50; }
+
+
+  .store-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px;
+  }
+  .section-title {
+    font-size: 28px;
+    margin: 30px 0 15px;
+    text-align: left;
+    font-weight: 700;
+  }
+  .cape-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .cape-card {
+    background: #fff; /* solid white */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.5s forwards;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .cape-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  }
+  .cape-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  .cape-info {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .cape-info h3 {
+    margin: 0 0 6px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    color: #222;
+  }
+  .cape-info p {
+    font-size: 13px;
+    opacity: 0.85;
+    text-align: left;
+    flex-grow: 1;
+    margin-bottom: 8px;
+  }
+  .cape-type {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    align-self: flex-start;
+  }
+  .cape-type.sell { background: #4CAF50; color: white; }
+  .cape-type.trade { background: #FF9800; color: white; }
+
+  /* Slightly bigger official sells */
+  .official-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    margin-bottom: 10%;
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .logo {
+    border-radius: 70%;
+    width: 5%;
+    height: 5%;
+  }
+</style>
+</head>
+<body>
+<nav>
+  <img class="logo" src="logo.png" alt="Logo">
+  <div class="nav-links">
+    <a href="./">Home</a>
+    <a href="./store">Store</a>
+    <a href="./contact">Contact</a>
+  </div>
+  <div></div> 
+</nav>
+
+
+<div class="store-container">
+  <h1 class="section-title">Official Sells</h1>
+  <div class="cape-grid official-grid" id="official-list"></div>
+
+  <h1 class="section-title">Community Listings</h1>
+  <div class="cape-grid" id="cape-list"></div>
+</div>
+
+<script src="store.js">
+</script>
+</body>
+</html>
