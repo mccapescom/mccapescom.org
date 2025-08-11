@@ -326,3 +326,5 @@ app.post('/admin/promote', authMiddleware, async (req, res) => {
 app.get('/health', (req, res) => res.json({ ok: true }));
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+
+module.exports = app;
